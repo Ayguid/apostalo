@@ -20,7 +20,7 @@ Route::get('/', 'LandingController@index');
 
 
 //creates auth routes for users
-Auth::routes();
+Auth::routes(['verify' => true]);
 //user logged in
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');

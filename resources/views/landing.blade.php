@@ -15,7 +15,7 @@
 
 
 
-
+{{--  start carousell--}}
     <div class="slideshow-container">
 
 
@@ -23,11 +23,9 @@
         <img src="{{asset('img/1.jpg')}}">
       </div>
 
-
       <div class="mySlides fade">
         <img src="{{asset('img/2.jpg')}}">
       </div>
-
 
       <div class="mySlides fade">
         <img src="{{asset('img/3.jpg')}}">
@@ -35,26 +33,24 @@
 
 
     </div>
-
-        {{-- <example-component></example-component> --}}
-        {{-- {{App\Event::find(1)->sports}} --}}
-        {{-- {{App\Sport::find(1)->events}} --}}
-
-
-    <div class="">
-    @for ($i=0; $i < 10; $i++)
-      <div class="below-carousel-item ">
-        {{App\Event::find(1)->sports()->first()->sport_description}}<br>
-        {{App\Sport::find(1)->events()->first()->instance}}<br>
-        <img  src="{{asset('img/ranking-home.png')}}" alt="">
-      </div>
-    @endfor
-    </div>
+{{-- end carousell  --}}
 
 
 
 
+<div id="below-carousel" class="below-carousel">
+
+
+ <div class="below-carousel-item" v-for='event in events'>
+   @{{ event.instance }}<br>
+   @{{ event.sports[0].sport_description }}
+   <img  src="{{asset('img/ranking-home.png')}}" alt="">
+ </div>
+
+
+</div>
 
 
 
+<script src="{{ asset('js/events.js') }}" defer></script>
 @endsection
