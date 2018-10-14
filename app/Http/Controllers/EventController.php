@@ -17,7 +17,7 @@ class EventController extends Controller
     public function index()
     {
       // dd(Event::first());
-    $events=Event::with('sports')->get();
+    $events=Event::with('sport', 'competition.sportCategory')->get();
     return $events;
     }
 

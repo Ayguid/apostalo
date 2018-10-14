@@ -8,8 +8,10 @@ use App\Event;
 
 class Sport extends Model
 {
+    protected $table = 'sports';
+
   protected $fillable = [
-    'sport_description',
+    'description',
   ];
 
 

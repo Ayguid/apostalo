@@ -36,21 +36,14 @@
 {{-- end carousell  --}}
 
 
-
-
 <div id="below-carousel" class="below-carousel">
-
-
- <div class="below-carousel-item" v-for='event in events'>
-   @{{ event.instance }}<br>
-   @{{ event.sports[0].sport_description }}
-   <img  src="{{asset('img/ranking-home.png')}}" alt="">
- </div>
-
-
+  <apostalofeed-component></apostalofeed-component>
+{{-- <passport-clients></passport-clients>
+<passport-authorized-clients></passport-authorized-clients>
+<passport-personal-access-tokens></passport-personal-access-tokens> --}}
 </div>
 
 
 
-<script src="{{ asset('js/events.js') }}" defer></script>
+
 @endsection

@@ -16,13 +16,15 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ref_stadium')->nullable();
-            $table->string('instance')->nullable();
+            $table->string('description')->nullable();
             $table->integer('sport_id')->nullable();
             // $table->foreign('sport_id')->references('id')->on('sports');
             $table->integer('competition_id')->nullable();
             $table->dateTimeTz('date')->nullable();
             $table->timestamps();
         });
+
+
     }
 
     /**
