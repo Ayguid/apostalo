@@ -14,11 +14,18 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($filter = false)
     {
-      // dd(Event::first());
-    $events=Event::with('sport', 'competition.sportCategory')->get();
-    return $events;
+
+    if ($filter == false) {
+      $events=Event::with('sport', 'competition.sportCategory', 'teams', 'bets')->orderBy('id', 'desc')->get();
+      return $events;
+    }
+    else{
+      $events=Event::where('sport_id', $filter)->with('sport', 'competition.sportCategory', 'teams', 'bets')->orderBy('id', 'desc')->get();
+      return $events;
+    }
+
     }
 
     /**

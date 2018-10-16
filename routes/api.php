@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::get('/events', 'EventController@index');
+Route::get('/events/{sport_id?}', 'EventController@index');
+Route::get('/sports', 'SportController@index');

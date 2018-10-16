@@ -60,6 +60,13 @@
                 {{ Auth::user()->name }} <span class="caret"></span>
               </a>
             </li>
+            {{-- @if (Auth::guard('admin')->check())
+              <li>
+                <a  href="{{route('admin.dashboard')}}" >
+                  Admin Zone <span class="caret"></span>
+                </a>
+              </li>
+            @endif --}}
             <li>
               <a class="" href="{{ route('logout') }}"
               onclick="event.preventDefault();
@@ -84,14 +91,13 @@
 
 
 
-
 <main  class="main-container">
   @yield('content')
 </main>
 
 
 
-
+<button id="backToTopButton" class="" title="Go to top">Arriba</button>
 
 
 
@@ -100,6 +106,9 @@
 </div>
 
 </div>
+
+
+
 
 <script type="text/javascript" src="{{asset('js/carousel.js')}}"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -110,5 +119,6 @@
 		// $(".se-pre-con").fadeOut("slow");
 	});
 </script>
+<script type="text/javascript" src="{{asset('js/backToTop.js')}}" defer></script>
 </body>
 </html>

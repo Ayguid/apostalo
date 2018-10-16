@@ -30,8 +30,10 @@ window.Vue = require('vue');
  );
 
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('apostalofeed-component', require('./components/ApostaloFeedComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('feed-component', require('./components/FeedComponent.vue'));
+Vue.component('event-component', require('./components/EventComponent.vue'));
+Vue.component('feedmenu-component', require('./components/FeedMenuComponent.vue'));
 
 const app = new Vue({
     el: '#app',

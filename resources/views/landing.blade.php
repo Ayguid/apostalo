@@ -37,13 +37,15 @@
 
 
 <div id="below-carousel" class="below-carousel">
-  <apostalofeed-component></apostalofeed-component>
-{{-- <passport-clients></passport-clients>
-<passport-authorized-clients></passport-authorized-clients>
-<passport-personal-access-tokens></passport-personal-access-tokens> --}}
+  <feed-component></feed-component>
 </div>
 
 
+
+
+{{-- <passport-clients></passport-clients>
+<passport-authorized-clients></passport-authorized-clients>
+<passport-personal-access-tokens></passport-personal-access-tokens> --}}
 
 
 @endsection

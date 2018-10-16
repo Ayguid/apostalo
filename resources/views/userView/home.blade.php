@@ -5,7 +5,7 @@
     <div class="">
         <div class="">
             <div class="card">
-                <div class="card-header">Home</div>
+                <div class="card-header">Tu Información</div>
 
                 <div class="card-body">
                     @if (session('status'))

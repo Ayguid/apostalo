@@ -17,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-      'email', 'dni', 'name', 'phone', 'address', 'username', 'password',
+      'email', 'dni', 'name', 'l_name', 'phone', 'address', 'username', 'password',
     ];
 
     /**
@@ -33,9 +33,5 @@ class User extends Authenticatable implements MustVerifyEmail
 
 
 
-      //
-      // public function premises()
-      // {
-      //   return $this->hasManyThrough(Premise::class, User_Address::class, 'user_id', 'id', 'id', 'premise_id' );
-      // }
+
 }
