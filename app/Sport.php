@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
+use App\SportCategory;
 
 
 class Sport extends Model
@@ -25,7 +26,10 @@ class Sport extends Model
   }
 
 
-
+public function sportCategories()
+{
+    return $this->hasMany(SportCategory::class);
+}
 
 
 

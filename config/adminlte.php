@@ -133,23 +133,34 @@ return [
             'icon' => 'lock',
         ],
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Control de Entidades',
             'icon'    => 'share',
             'submenu' => [
+
+
+
+
+
+                // [
+                //     'text' => 'Test',
+                //     'url'  => '#',
+                // ],
+
+
+
+
+
+
                 [
-                    'text' => 'Level One',
+                    'text' => 'Apuestas',
                     'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
                     'submenu' => [
                         [
-                            'text' => 'Level Two',
+                            'text' => 'Agregar apuestas',
                             'url'  => '#',
                         ],
                         [
-                            'text'    => 'Level Two',
+                            'text'    => 'Editar apuestas',
                             'url'     => '#',
                             'submenu' => [
                                 [
@@ -164,13 +175,126 @@ return [
                         ],
                     ],
                 ],
+
+
+
+
                 [
-                    'text' => 'Level One',
+                    'text' => 'Eventos',
                     'url'  => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Agregar evento',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Editar evento',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
+
+
+
+                [
+                    'text' => 'Competencias',
+                    'url'  => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Agregar competencia',
+                            'url'  => 'admin/competitionsForm',
+                        ],
+                        [
+                            'text'    => 'Editar competencia',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+
+
+
+                [
+                    'text' => 'Divisiones',
+                    'url'  => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Agregar division',
+                            'url'  => 'admin/sportsCategoriesForm',
+                        ],
+                        [
+                            'text'    => 'Editar division',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+
+
+
+                [
+                    'text'    => 'Deportes',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Agregar deporte',
+                            'url'  => 'admin/sportsForm',
+                        ],
+                        [
+                            'text'    => 'Editar Deporte',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'Level Three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+
+
+
+
+
+
             ],
         ],
-        'Eventos',
+        'Alertas',
         [
             'text'       => 'Importante',
             'url'  => '#',

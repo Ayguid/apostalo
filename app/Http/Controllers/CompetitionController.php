@@ -3,29 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Event;
+use App\Competition;
+use Illuminate\Support\Facades\Validator;
 
-
-
-class EventController extends Controller
+class CompetitionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($filter = false)
+    public function index()
     {
-
-    if ($filter == false) {
-      $events=Event::with('sport', 'competition.sportCategory', 'teams', 'bets.team')->orderBy('id', 'desc')->get();
-      return $events;
-    }
-    else{
-      $events=Event::where('sport_id', $filter)->with('sport', 'competition.sportCategory', 'teams', 'bets.team')->orderBy('id', 'desc')->get();
-      return $events;
-    }
-
+        //
     }
 
     /**
@@ -46,7 +36,29 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validatedData = Validator::make($request->all(), [
+        'description' => 'required|max:255',
+          ]);
+
+      if ($validatedData->fails())
+      { $request->session()->flash('alert-danger', 'There was a problem adding your Competition!');
+        return redirect(route('competitionsForm'))->withInput()->withErrors($validatedData->errors());
+      }
+      else{
+        $competition = new Competition();
+        $competition->description = $request->description;
+        $competition->sport_id = $request->sport_id;
+        $competition->sport_category_id = $request->sport_category_id;
+        $save=$competition->save();
+        if ($save) {
+          $request->session()->flash('alert-success', 'Competition Saved!');
+            return redirect(route('competitionsForm'));
+        }else{
+          $request->session()->flash('alert-danger', 'There was a problem adding your Competition!');
+            return redirect(route('competitionsForm'))->withInput()->withErrors($validatedData->errors());
+        }
+      }
+
     }
 
     /**

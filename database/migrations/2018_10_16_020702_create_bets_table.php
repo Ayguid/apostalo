@@ -16,9 +16,12 @@ class CreateBetsTable extends Migration
         Schema::create('bets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('event_id');
-            $table->integer('ref_who_table_id');
-            $table->integer('ref_bet_type_id');
-            $table->boolean('status');
+            $table->string('description')->nullable();
+            $table->integer('team_id')->nullable();
+            $table->integer('player_id')->nullable();
+            $table->float('payout')->nullable();
+            $table->boolean('status')->nullable();
+            $table->boolean('result')->nullable();
             $table->timestamps();
         });
     }

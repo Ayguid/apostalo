@@ -14298,7 +14298,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(15);
-module.exports = __webpack_require__(70);
+module.exports = __webpack_require__(67);
 
 
 /***/ }),
@@ -14328,9 +14328,11 @@ Vue.component('passport-authorized-clients', __webpack_require__(48));
 Vue.component('passport-personal-access-tokens', __webpack_require__(53));
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('feed-component', __webpack_require__(77));
-Vue.component('event-component', __webpack_require__(74));
-Vue.component('feedmenu-component', __webpack_require__(67));
+Vue.component('feed-component', __webpack_require__(58));
+Vue.component('event-component', __webpack_require__(61));
+Vue.component('feedmenu-component', __webpack_require__(64));
+Vue.component('bets-component', __webpack_require__(74));
+Vue.component('bet-component', __webpack_require__(71));
 
 var app = new Vue({
     el: '#app'
@@ -49767,354 +49769,15 @@ if (false) {
 }
 
 /***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(68)
+var __vue_script__ = __webpack_require__(59)
 /* template */
-var __vue_template__ = __webpack_require__(69)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/FeedMenuComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d098478e", Component.options)
-  } else {
-    hotAPI.reload("data-v-d098478e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 68 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      sports: []
-    };
-  },
-
-
-  methods: {
-    showSports: function showSports() {
-      var _this = this;
-
-      axios.get('api/sports/').then(function (response) {
-        return _this.sports = response.data;
-      });
-    },
-    filterBySport: function filterBySport(e) {
-      this.$emit('filterBySport', e); // this.$parent.showEvents(e);
-    }
-  },
-
-  mounted: function mounted() {
-
-    this.showSports();
-  }
-});
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _c(
-      "ul",
-      { staticClass: "feed_menu " },
-      _vm._l(_vm.sports, function(sport) {
-        return _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "badge badge-secondary",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  _vm.filterBySport(sport.id)
-                }
-              }
-            },
-            [_vm._v(_vm._s(sport.description))]
-          )
-        ])
-      })
-    ),
-    _vm._v(" "),
-    _c(
-      "a",
-      {
-        staticClass: "badge badge-secondary",
-        attrs: { href: "#" },
-        on: {
-          click: function($event) {
-            _vm.filterBySport("")
-          }
-        }
-      },
-      [_vm._v("All Sports")]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-d098478e", module.exports)
-  }
-}
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(75)
-/* template */
-var __vue_template__ = __webpack_require__(76)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/EventComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-51cb380c", Component.options)
-  } else {
-    hotAPI.reload("data-v-51cb380c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 75 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['event'],
-
-  data: function data() {
-    return {};
-  },
-  mounted: function mounted() {}
-});
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "events" }, [
-    _c("div", { staticClass: "event" }, [
-      _c(
-        "div",
-        { staticClass: "event_data" },
-        [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("p", {}, [_vm._v(_vm._s(_vm.event.sport.description))])
-          ]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.event.description))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.event.competition.description))]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(_vm._s(_vm.event.competition.sport_category.description))
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.event.teams, function(team) {
-            return _c("p", [
-              _c("a", { attrs: { href: "#" } }, [
-                _vm._v(_vm._s(team.description))
-              ])
-            ])
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "available_bets" }, [
-        _c("h2", { staticClass: "text-align" }, [_vm._v("Available Bets")]),
-        _vm._v(" "),
-        _c(
-          "ul",
-          _vm._l(_vm.event.bets, function(bet) {
-            return _c("li", [_vm._v(_vm._s(bet))])
-          })
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "clearfix" }),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "float_left",
-        attrs: { src: "/img/ranking-home.png", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "float_left",
-        attrs: { src: "/img/ranking-home.png", alt: "" }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-51cb380c", module.exports)
-  }
-}
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(78)
-/* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50153,7 +49816,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 78 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50217,7 +49880,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 79 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50255,6 +49918,619 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-201b68d8", module.exports)
+  }
+}
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/EventComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-51cb380c", Component.options)
+  } else {
+    hotAPI.reload("data-v-51cb380c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['event'],
+
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "events" }, [
+    _c("div", { staticClass: "event" }, [
+      _c(
+        "div",
+        { staticClass: "event_data" },
+        [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("p", {}, [_vm._v(_vm._s(_vm.event.sport.description))])
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.event.description))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.event.competition.description))]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(_vm._s(_vm.event.competition.sport_category.description))
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.event.teams, function(team) {
+            return _c("p", [
+              _c("a", { attrs: { href: "#" } }, [
+                _vm._v(_vm._s(team.description))
+              ])
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "available_bets" },
+        [
+          _c("h2", { staticClass: "text-align" }, [_vm._v("Available Bets")]),
+          _vm._v(" "),
+          _c("bets-component", { attrs: { event: _vm.event } })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "clearfix" }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "float_left",
+        attrs: { src: "/img/ranking-home.png", alt: "" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "float_left",
+        attrs: { src: "/img/ranking-home.png", alt: "" }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-51cb380c", module.exports)
+  }
+}
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(65)
+/* template */
+var __vue_template__ = __webpack_require__(66)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/FeedMenuComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d098478e", Component.options)
+  } else {
+    hotAPI.reload("data-v-d098478e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      sports: []
+    };
+  },
+
+
+  methods: {
+    showSports: function showSports() {
+      var _this = this;
+
+      axios.get('api/sports/').then(function (response) {
+        return _this.sports = response.data;
+      });
+    },
+    filterBySport: function filterBySport(e) {
+      this.$emit('filterBySport', e); // this.$parent.showEvents(e);
+    }
+  },
+
+  mounted: function mounted() {
+
+    this.showSports();
+  }
+});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c(
+      "ul",
+      { staticClass: "feed_menu " },
+      _vm._l(_vm.sports, function(sport) {
+        return _c("li", [
+          _c(
+            "a",
+            {
+              staticClass: "badge badge-secondary",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  _vm.filterBySport(sport.id)
+                }
+              }
+            },
+            [_vm._v(_vm._s(sport.description))]
+          )
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "badge badge-secondary",
+        attrs: { href: "#" },
+        on: {
+          click: function($event) {
+            _vm.filterBySport("")
+          }
+        }
+      },
+      [_vm._v("All Sports")]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d098478e", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(72)
+/* template */
+var __vue_template__ = __webpack_require__(73)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/BetComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7da261ba", Component.options)
+  } else {
+    hotAPI.reload("data-v-7da261ba", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['bet'],
+
+  data: function data() {
+    return {
+      payout: ''
+    };
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c("span", [_vm._v(_vm._s(_vm.bet.description))]),
+    _vm._v(" "),
+    _vm.bet.team !== null
+      ? _c("span", [_vm._v(_vm._s(_vm.bet.team.description))])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-row" }, [
+      _c("div", { staticClass: "col" }, [
+        _c("span", { staticClass: "form-control payout" }, [
+          _vm._v(_vm._s(_vm.bet.payout) + "x")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _c("input", {
+          staticClass: "form-control bet_amount",
+          attrs: { type: "number", value: "", placeholder: "Ingrese un Monto" },
+          on: {
+            input: function($event) {
+              _vm.payout = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" }, [
+        _vm.payout == ""
+          ? _c("input", {
+              staticClass: "form-control payout",
+              attrs: { type: "number", placeholder: "Ganancia" }
+            })
+          : _c("input", {
+              staticClass: "form-control payout",
+              attrs: { type: "number", placeholder: "Ganancia" },
+              domProps: { value: _vm.payout * _vm.bet.payout }
+            })
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7da261ba", module.exports)
+  }
+}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(75)
+/* template */
+var __vue_template__ = __webpack_require__(76)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/BetsComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d4dfaf4", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d4dfaf4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['event'],
+
+  mounted: function mounted() {}
+});
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {}, [
+    _c(
+      "form",
+      {
+        staticClass: "betComponentForm",
+        attrs: { action: "", method: "post" }
+      },
+      [
+        _vm._l(_vm.event.bets, function(bet) {
+          return _c("bet-component", { attrs: { bet: bet } })
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("button", { attrs: { type: "submit", name: "button" } }, [
+        _vm._v("BET NOW")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5d4dfaf4", module.exports)
   }
 }
 

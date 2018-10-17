@@ -4,6 +4,8 @@ namespace App;
 use App\Sport;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Competition;
+
 
 class SportCategory extends Model
 {
@@ -27,6 +29,11 @@ class SportCategory extends Model
     return $this->hasMany(Team::class);
   }
 
+
+  public function competitions()
+  {
+    return $this->hasMany(Competition::class);
+  }
 
 
 }

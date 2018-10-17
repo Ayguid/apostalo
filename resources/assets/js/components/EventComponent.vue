@@ -15,9 +15,8 @@
       <div class="available_bets">
         <h2 class="text-align">Available Bets</h2>
 
-        <ul>
-          <li v-for="bet in event.bets">{{bet}}</li>
-        </ul>
+        <bets-component :event='event'></bets-component>
+
       </div>
 
       <div class="clearfix"></div>
@@ -39,6 +38,7 @@ export default {
 
   data(){
     return{
+
     }
   },
 
