@@ -20,6 +20,8 @@ public function index()
 
 
 
+
+
 public function store(Request $request)
 {
   $validatedData = Validator::make($request->all(), [
@@ -28,7 +30,7 @@ public function store(Request $request)
 
   if ($validatedData->fails())
   { $request->session()->flash('alert-danger', 'There was a problem adding your sport category!');
-    return redirect(route('sportsCategoriesForm'))->withInput()->withErrors($validatedData->errors());
+    return redirect(route('sportsCategories'))->withInput()->withErrors($validatedData->errors());
   }
   else{
     $sportCategory = new SportCategory();
@@ -37,10 +39,10 @@ public function store(Request $request)
     $save=$sportCategory->save();
     if ($save) {
       $request->session()->flash('alert-success', 'Sport Category Saved!');
-        return redirect(route('sportsCategoriesForm'));
+        return redirect(route('sportsCategories'));
     }else{
       $request->session()->flash('alert-danger', 'There was a problem adding your sport category!');
-        return redirect(route('sportsCategoriesForm'))->withInput()->withErrors($validatedData->errors());
+        return redirect(route('sportsCategories'))->withInput()->withErrors($validatedData->errors());
     }
   }
 

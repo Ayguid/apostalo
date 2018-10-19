@@ -243,7 +243,10 @@ body {
 
 
 
-
+.list-group-item{
+  display: flex ;
+  justify-content: space-between;
+}
 
 
 
@@ -254,7 +257,7 @@ body {
 /* admin */
 .adminSports{
   padding: 10px;
-  list-style: none;
+  /* list-style: none; */
 }
 
 

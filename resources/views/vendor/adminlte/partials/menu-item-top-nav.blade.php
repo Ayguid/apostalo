@@ -8,8 +8,8 @@
             {{ $item['text'] }}
             @if (isset($item['label']))
                 <span class="label label-{{ isset($item['label_color']) ? $item['label_color'] : 'primary' }}">{{ $item['label'] }}</span>
-            @elseif (isset($item['submenu']))
-                <span class="caret"></span>
+            {{-- @elseif (isset($item['submenu']))
+                <span class="caret"></span> --}}
             @endif
         </a>
         @if (isset($item['submenu']))

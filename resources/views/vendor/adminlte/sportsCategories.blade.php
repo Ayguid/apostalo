@@ -19,8 +19,8 @@
           {{ session('status') }}
         </div>
       @endif
-
-
+<br>
+<div class="panel-group" id="accordion">
 
 @foreach (App\Sport::all() as $sport)
   <div class="panel panel-default">
@@ -34,12 +34,14 @@
 
 <h3>Deporte:  {{$sport->description}}</h3>
 
-<ul class="adminSports">
-
 <h4>Divisiones</h4>
-@foreach ($sport->sportCategories as $sportCategory)
-  <li>{{$sportCategory->description}}</li>
-@endforeach
+
+<ul class="list-group">
+
+  @foreach ($sport->sportCategories as $sportCategory)
+    <li class="list-group-item">{{$sportCategory->description}}&nbsp; <a href="#">Competencias</a></li>
+  @endforeach
+
 </ul>
 
 <form class="" action="{{route('storeSportCategory')}}" method="post">
@@ -76,6 +78,7 @@
 
 
     </div>
+  </div>
   </div>
 
 

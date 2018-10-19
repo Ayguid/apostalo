@@ -151,111 +151,111 @@ return [
 
 
 
-                [
-                    'text' => 'Apuestas',
-                    'url'  => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Agregar apuestas',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Editar apuestas',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
+                // [
+                //     'text' => 'Apuestas',
+                //     'url'  => '#',
+                //     'submenu' => [
+                //         [
+                //             'text' => 'Agregar apuestas',
+                //             'url'  => '#',
+                //         ],
+                //         [
+                //             'text'    => 'Editar apuestas',
+                //             'url'     => '#',
+                //             'submenu' => [
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //             ],
+                //         ],
+                //     ],
+                // ],
+
+
+
+
+                // [
+                //     'text' => 'Eventos',
+                //     'url'  => '#',
+                //     'submenu' => [
+                //         [
+                //             'text' => 'Agregar evento',
+                //             'url'  => 'admin/eventsForm',
+                //         ],
+                //         [
+                //             'text'    => 'Editar evento',
+                //             'url'     => '#',
+                //             'submenu' => [
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //             ],
+                //         ],
+                //     ],
+                // ],
+                //
+                //
+                //
+                // [
+                //     'text' => 'Competencias',
+                //     'url'  => '#',
+                //     'submenu' => [
+                //         [
+                //             'text' => 'Agregar competencia',
+                //             'url'  => 'admin/competitionsForm',
+                //         ],
+                //         [
+                //             'text'    => 'Editar competencia',
+                //             'url'     => '#',
+                //             'submenu' => [
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //                 [
+                //                     'text' => 'Level Three',
+                //                     'url'  => '#',
+                //                 ],
+                //             ],
+                //         ],
+                //     ],
+                // ],
 
 
 
 
                 [
-                    'text' => 'Eventos',
+                    'text' => 'Divisiones y competencias',
                     'url'  => '#',
                     'submenu' => [
                         [
-                            'text' => 'Agregar evento',
-                            'url'  => '#',
+                            'text' => 'Editar',
+                            'url'  => 'admin/sportsCategories',
                         ],
-                        [
-                            'text'    => 'Editar evento',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-
-
-
-                [
-                    'text' => 'Competencias',
-                    'url'  => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Agregar competencia',
-                            'url'  => 'admin/competitionsForm',
-                        ],
-                        [
-                            'text'    => 'Editar competencia',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-
-
-
-
-                [
-                    'text' => 'Divisiones',
-                    'url'  => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Agregar division',
-                            'url'  => 'admin/sportsCategoriesForm',
-                        ],
-                        [
-                            'text'    => 'Editar division',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
+                        // [
+                        //     'text'    => 'Editar division',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //     ],
+                        // ],
                     ],
                 ],
 

@@ -40,14 +40,14 @@
       </form>
 
 
-<ul class="adminSports">
+<ul class="list-group">
 
 
 @foreach (App\Sport::all() as $sport)
 
-  
 
-  <li>{{$sport->description}}</li>
+
+  <li class="list-group-item">{{$sport->description}}</li>
 @endforeach
 </ul>
 

@@ -17,6 +17,14 @@
                 </span>
             @endif
         </a>
+        {{-- @if (isset($item['submenu']))
+        <ul class="{{ $item['submenu_class'] }}">
+
+        @foreach (App\Sport::all() as $sport)
+          {{$sport}}
+        @endforeach
+          @endif
+      </ul> --}}
         @if (isset($item['submenu']))
             <ul class="{{ $item['submenu_class'] }}">
                 @each('adminlte::partials.menu-item', $item['submenu'], 'item')

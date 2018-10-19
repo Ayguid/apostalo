@@ -48,16 +48,17 @@ Route::prefix('admin')->group(function()
   Route::post('password/reset', 'Auth\AdminResetPasswordController@reset');
   Route::get('password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
-
-
+//
 Route::get('/sportsForm', 'AdminController@showSportsForm')->name('sportsForm');
 Route::post('/storeSport', 'SportController@store')->name('storeSport');
-
-Route::get('/sportsCategoriesForm', 'AdminController@showSportsCategoriesForm')->name('sportsCategoriesForm');
+//
+Route::get('/sportsCategories', 'AdminController@showSportsCategories')->name('sportsCategories');
 Route::post('/storeSportCategory', 'SportCategoryController@store')->name('storeSportCategory');
-
-Route::get('/competitionsForm', 'AdminController@showCompetitionsForm')->name('competitionsForm');
-Route::post('/storeCompetition', 'CompetitionController@store')->name('storeCompetition');
-
+//
+// Route::get('/competitions', 'AdminController@showCompetitions')->name('competitionsForm');
+// Route::post('/storeCompetition', 'CompetitionController@store')->name('storeCompetition');
+//
+// Route::get('/eventsForm', 'AdminController@showEventsForm')->name('eventsForm');
+// Route::post('/storeCompetition', 'CompetitionController@store')->name('storeCompetition');
 
 });

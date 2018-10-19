@@ -34,7 +34,6 @@ window.Vue = require('vue');
 Vue.component('feed-component', require('./components/FeedComponent.vue'));
 Vue.component('event-component', require('./components/EventComponent.vue'));
 Vue.component('feedmenu-component', require('./components/FeedMenuComponent.vue'));
-Vue.component('bets-component', require('./components/BetsComponent.vue'));
 Vue.component('bet-component', require('./components/BetComponent.vue'));
 
 const app = new Vue({

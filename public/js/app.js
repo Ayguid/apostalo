@@ -14298,7 +14298,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(15);
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(73);
 
 
 /***/ }),
@@ -14331,8 +14331,7 @@ Vue.component('passport-personal-access-tokens', __webpack_require__(53));
 Vue.component('feed-component', __webpack_require__(58));
 Vue.component('event-component', __webpack_require__(61));
 Vue.component('feedmenu-component', __webpack_require__(64));
-Vue.component('bets-component', __webpack_require__(74));
-Vue.component('bet-component', __webpack_require__(71));
+Vue.component('bet-component', __webpack_require__(70));
 
 var app = new Vue({
     el: '#app'
@@ -50008,6 +50007,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['event'],
@@ -50055,16 +50064,25 @@ var render = function() {
         2
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "available_bets" },
-        [
-          _c("h2", { staticClass: "text-align" }, [_vm._v("Available Bets")]),
-          _vm._v(" "),
-          _c("bets-component", { attrs: { event: _vm.event } })
-        ],
-        1
-      ),
+      _c("div", { staticClass: "available_bets" }, [
+        _c("h2", { staticClass: "text-align" }, [_vm._v("Available Bets")]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "betComponentForm",
+            attrs: { action: "", method: "post" }
+          },
+          [
+            _vm._l(_vm.event.bets, function(bet) {
+              return _c("bet-component", { key: bet.id, attrs: { bet: bet } })
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ],
+          2
+        )
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "clearfix" }),
       _vm._v(" "),
@@ -50080,7 +50098,18 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("button", { attrs: { type: "submit", name: "button" } }, [
+        _vm._v("BET NOW")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -50242,24 +50271,18 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/* 67 */,
 /* 68 */,
 /* 69 */,
-/* 70 */,
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(72)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(73)
+var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50298,7 +50321,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50350,7 +50373,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50374,7 +50397,13 @@ var render = function() {
       _c("div", { staticClass: "col" }, [
         _c("input", {
           staticClass: "form-control bet_amount",
-          attrs: { type: "number", value: "", placeholder: "Ingrese un Monto" },
+          attrs: {
+            name: "bet_amount",
+            min: "0",
+            type: "number",
+            value: "",
+            placeholder: "Ingrese un Monto"
+          },
           on: {
             input: function($event) {
               _vm.payout = $event.target.value
@@ -50387,11 +50416,21 @@ var render = function() {
         _vm.payout == ""
           ? _c("input", {
               staticClass: "form-control payout",
-              attrs: { type: "number", placeholder: "Ganancia" }
+              attrs: {
+                type: "number",
+                placeholder: "Ganancia",
+                min: "0",
+                disabled: ""
+              }
             })
           : _c("input", {
               staticClass: "form-control payout",
-              attrs: { type: "number", placeholder: "Ganancia" },
+              attrs: {
+                type: "number",
+                min: "0",
+                placeholder: "Ganancia",
+                disabled: ""
+              },
               domProps: { value: _vm.payout * _vm.bet.payout }
             })
       ])
@@ -50409,130 +50448,10 @@ if (false) {
 }
 
 /***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 73 */
+/***/ (function(module, exports) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(75)
-/* template */
-var __vue_template__ = __webpack_require__(76)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/BetsComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5d4dfaf4", Component.options)
-  } else {
-    hotAPI.reload("data-v-5d4dfaf4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 75 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['event'],
-
-  mounted: function mounted() {}
-});
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _c(
-      "form",
-      {
-        staticClass: "betComponentForm",
-        attrs: { action: "", method: "post" }
-      },
-      [
-        _vm._l(_vm.event.bets, function(bet) {
-          return _c("bet-component", { attrs: { bet: bet } })
-        }),
-        _vm._v(" "),
-        _vm._m(0)
-      ],
-      2
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("button", { attrs: { type: "submit", name: "button" } }, [
-        _vm._v("BET NOW")
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5d4dfaf4", module.exports)
-  }
-}
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

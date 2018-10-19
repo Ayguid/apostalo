@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Event;
 use App\SportCategory;
+use App\Sport;
+
 
 
 class Competition extends Model
@@ -29,6 +31,12 @@ public function events()
 public function sportCategory()
 {
   return $this->hasOne(SportCategory::class, 'id');
+}
+
+
+public function sport()
+{
+    return $this->hasManyThrough(Sport::class, SportCategory::class, 'sport_id', 'id', 'sport_id', 'sport_id');
 }
 
 
