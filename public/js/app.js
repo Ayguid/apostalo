@@ -50360,6 +50360,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['bet'],
@@ -50431,7 +50432,9 @@ var render = function() {
                 placeholder: "Ganancia",
                 disabled: ""
               },
-              domProps: { value: _vm.payout * _vm.bet.payout }
+              domProps: {
+                value: Math.round(_vm.payout * _vm.bet.payout * 100) / 100
+              }
             })
       ])
     ])

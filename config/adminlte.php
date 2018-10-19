@@ -239,8 +239,9 @@ return [
                     'url'  => '#',
                     'submenu' => [
                         [
-                            'text' => 'Editar',
+                            'text' => 'Agregar',
                             'url'  => 'admin/sportsCategories',
+                            'icon' => 'edit',
                         ],
                         // [
                         //     'text'    => 'Editar division',
@@ -265,25 +266,27 @@ return [
                 [
                     'text'    => 'Deportes',
                     'url'     => '#',
+
                     'submenu' => [
                         [
-                            'text' => 'Agregar deporte',
+                            'text' => 'Editar deportes',
                             'url'  => 'admin/sportsForm',
+                            'icon' => 'edit',
                         ],
-                        [
-                            'text'    => 'Editar Deporte',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
+                        // [
+                        //     'text'    => 'Editar Deporte',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //     ],
+                        // ],
                     ],
                 ],
 
