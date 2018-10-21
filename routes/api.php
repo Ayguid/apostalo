@@ -21,3 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/events/{sport_id?}', 'EventController@index');
 Route::get('/sports', 'SportController@index');
+
+//
+Route::get('/sportCategories/{id?}', 'SportController@sportCategories');
+Route::get('/competitions/{id?}', 'SportCategoryController@competitions');
+Route::get('/teams/{id?}', 'TeamController@teamsByCategory');

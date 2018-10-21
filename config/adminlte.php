@@ -179,30 +179,31 @@ return [
 
 
 
-                // [
-                //     'text' => 'Eventos',
-                //     'url'  => '#',
-                //     'submenu' => [
-                //         [
-                //             'text' => 'Agregar evento',
-                //             'url'  => 'admin/eventsForm',
-                //         ],
-                //         [
-                //             'text'    => 'Editar evento',
-                //             'url'     => '#',
-                //             'submenu' => [
-                //                 [
-                //                     'text' => 'Level Three',
-                //                     'url'  => '#',
-                //                 ],
-                //                 [
-                //                     'text' => 'Level Three',
-                //                     'url'  => '#',
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                // ],
+                [
+                    'text' => 'Eventos',
+                    'url'  => 'admin/adminShowEvents',
+                    // 'submenu' => [
+                        // [
+                        //     'text' => 'Agregar',
+                        //     'url'  => 'admin/',
+                        //     'icon' => 'edit',
+                        // ],
+                        // [
+                        //     'text'    => 'Editar evento',
+                        //     'url'     => '#',
+                        //     'submenu' => [
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //         [
+                        //             'text' => 'Level Three',
+                        //             'url'  => '#',
+                        //         ],
+                        //     ],
+                        // ],
+                    // ],
+                ],
                 //
                 //
                 //
@@ -270,7 +271,7 @@ return [
                     'submenu' => [
                         [
                             'text' => 'Editar deportes',
-                            'url'  => 'admin/sportsForm',
+                            'url'  => 'admin/sports',
                             'icon' => 'edit',
                         ],
                         // [

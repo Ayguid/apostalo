@@ -14298,7 +14298,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(15);
-module.exports = __webpack_require__(73);
+module.exports = __webpack_require__(70);
 
 
 /***/ }),
@@ -14331,7 +14331,7 @@ Vue.component('passport-personal-access-tokens', __webpack_require__(53));
 Vue.component('feed-component', __webpack_require__(58));
 Vue.component('event-component', __webpack_require__(61));
 Vue.component('feedmenu-component', __webpack_require__(64));
-Vue.component('bet-component', __webpack_require__(70));
+Vue.component('bet-component', __webpack_require__(67));
 
 var app = new Vue({
     el: '#app'
@@ -50047,10 +50047,15 @@ var render = function() {
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(_vm.event.description))]),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.event.competition.description))]),
+          _c("p", [
+            _vm._v(
+              "Division: " +
+                _vm._s(_vm.event.competition.sport_category.description)
+            )
+          ]),
           _vm._v(" "),
           _c("p", [
-            _vm._v(_vm._s(_vm.event.competition.sport_category.description))
+            _vm._v("Competencia: " + _vm._s(_vm.event.competition.description))
           ]),
           _vm._v(" "),
           _vm._l(_vm.event.teams, function(team) {
@@ -50271,18 +50276,15 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(68)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(69)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50321,7 +50323,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50374,7 +50376,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 72 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50451,7 +50453,7 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 70 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

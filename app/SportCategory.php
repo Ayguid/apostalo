@@ -18,6 +18,9 @@ class SportCategory extends Model
     ];
 
 
+
+
+
   public function sport()
   {
     return $this->hasMany(Sport::class);
@@ -34,6 +37,14 @@ class SportCategory extends Model
   {
     return $this->hasMany(Competition::class);
   }
+
+
+
+
+
+
+
+
 
 
 }

@@ -23,7 +23,6 @@
 
       <form class="" action="{{route('storeSport')}}" method="post">
         {{ csrf_field() }}
-
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="description">Ingresar Deporte</label>
@@ -31,25 +30,20 @@
           </div>
         </div>
 
-<br>
+        <br>
+
         <div class="form-row">
           <button class="btn btn-primary" type="submit">Agregar Deporte</button>
         </div>
-
-
       </form>
 
 
-<ul class="list-group">
 
-
-@foreach (App\Sport::all() as $sport)
-
-
-
-  <li class="list-group-item">{{$sport->description}}</li>
-@endforeach
-</ul>
+      <ul class="list-group">
+        @foreach (App\Sport::all() as $sport)
+          <li class="list-group-item">{{$sport->description}}</li>
+        @endforeach
+      </ul>
 
 
 

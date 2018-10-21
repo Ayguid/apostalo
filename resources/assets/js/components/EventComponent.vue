@@ -8,8 +8,8 @@
       <div class="event_data">
         <a class="" href="#"><p class="">{{event.sport.description}}</p></a>
         <p>{{event.description}}</p>
-        <p>{{event.competition.description}}</p>
-        <p>{{event.competition.sport_category.description}}</p>
+        <p>Division: {{event.competition.sport_category.description}}</p>
+        <p>Competencia: {{event.competition.description}}</p>
         <p v-for="team in event.teams"> <a href="#">{{team.description}}</a> </p>
       </div>
 

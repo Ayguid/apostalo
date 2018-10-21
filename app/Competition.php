@@ -30,7 +30,7 @@ public function events()
 
 public function sportCategory()
 {
-  return $this->hasOne(SportCategory::class, 'id');
+  return $this->hasOne(SportCategory::class, 'id', 'sport_category_id');
 }
 
 

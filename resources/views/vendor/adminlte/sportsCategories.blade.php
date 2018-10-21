@@ -11,7 +11,8 @@
   @endif
 
   <div class="card">
-    <div class="card-header">Seccion Divisiones</div>
+    <h3>Seccion Divisiones</h3>
+    <div class="card-header">Seleccione un Deporte</div>
 
     <div class="card-body">
       @if (session('status'))
@@ -33,24 +34,30 @@
       <div class="panel-body">
 
 <h3>Deporte:  {{$sport->description}}</h3>
-
+{{-- {{dd($sport->competitions)}} --}}
 <h4>Divisiones</h4>
 
 <ul class="list-group">
 
   @foreach ($sport->sportCategories as $sportCategory)
-    <li class="list-group-item">{{$sportCategory->description}}&nbsp; <a href="#">Competencias</a></li>
+
+    <li class="list-group-item">{{$sportCategory->description}}&nbsp; <a href="{{route('showCompetitions',[ $sportCategory->sport_id, $sportCategory->id])}}">Competencias</a></li>
+
   @endforeach
 
 </ul>
 
+<a class="" data-toggle="collapse" href="#divisionForm{{$sport->id}}" role="button" aria-expanded="false" aria-controls="divisionForm">
+  <i class="fa fa-plus"></i> Agregar Division
+</a>
+<div class="collapse" id="divisionForm{{$sport->id}}">
+
 <form class="" action="{{route('storeSportCategory')}}" method="post">
   {{ csrf_field() }}
-
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="description">Ingresar Division</label>
-      <input type="text" class="form-control" placeholder="Ingresar Deporte" name="description" value="" required>
+      <input type="text" class="form-control" placeholder="Ingresar Division" name="description" value="" required>
       <input hidden type="number" name="sport_id" value="{{$sport->id}}" required>
     </div>
   </div>
@@ -64,7 +71,7 @@
 
 
 </form>
-
+</div>
 
 </div>
 </div>

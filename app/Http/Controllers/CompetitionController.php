@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sport;
 use App\Competition;
+use App\SportCategory;
 use Illuminate\Support\Facades\Validator;
 
 class CompetitionController extends Controller
@@ -18,15 +20,25 @@ class CompetitionController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
 
 
+    public function competitiosByCategory($sportId, $sCategory)
+    {
+      $sport = Sport::find($sportId);
+      $competitions = Competition::where('sport_category_id', $sCategory)->where('sport_id', $sportId)->get();
+      $category = SportCategory::find($sCategory);
 
+      $data = [
+        'sport'=>$sport,
+        'competitions'=>$competitions,
+        'category'=>$category,
+
+      ];
+
+
+      return view('vendor.adminlte.competitions')->with('data', $data);
+    }
 
 
 
@@ -42,6 +54,10 @@ class CompetitionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function store(Request $request)
     {
       $validatedData = Validator::make($request->all(), [
@@ -50,7 +66,7 @@ class CompetitionController extends Controller
 
       if ($validatedData->fails())
       { $request->session()->flash('alert-danger', 'There was a problem adding your Competition!');
-        return redirect(route('competitionsForm'))->withInput()->withErrors($validatedData->errors());
+        return redirect(route('showCompetitions', [$request->sport_id, $request->sport_category_id]))->withInput()->withErrors($validatedData->errors());
       }
       else{
         $competition = new Competition();
@@ -60,10 +76,10 @@ class CompetitionController extends Controller
         $save=$competition->save();
         if ($save) {
           $request->session()->flash('alert-success', 'Competition Saved!');
-            return redirect(route('competitionsForm'));
+            return redirect(route('showCompetitions', [$request->sport_id, $request->sport_category_id]));
         }else{
           $request->session()->flash('alert-danger', 'There was a problem adding your Competition!');
-            return redirect(route('competitionsForm'))->withInput()->withErrors($validatedData->errors());
+            return redirect(route('showCompetitions', [$request->sport_id, $request->sport_category_id]))->withInput()->withErrors($validatedData->errors());
         }
       }
 
