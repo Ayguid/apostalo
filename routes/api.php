@@ -25,4 +25,4 @@ Route::get('/sports', 'SportController@index');
 //
 Route::get('/sportCategories/{id?}', 'SportController@sportCategories');
 Route::get('/competitions/{id?}', 'SportCategoryController@competitions');
-Route::get('/teams/{id?}', 'TeamController@teamsByCategory');
+Route::get('/teamsByCategory/{id?}', 'TeamController@teamsByCategory');

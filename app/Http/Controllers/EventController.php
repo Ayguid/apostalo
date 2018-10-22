@@ -36,8 +36,7 @@ class EventController extends Controller
     {
       $events = Event::all();
       if ($sport == false) {
-        $events=Event::with('sport', 'competition.sportCategory', 'teams', 'bets.team')->orderBy('id', 'desc')->get();
-        return view('vendor.adminlte.events')->with('events', $events);
+        return view('vendor.adminlte.events');
       }
       else{
         $events=Event::where('sport_id', $sport)->with('sport', 'competition.sportCategory', 'teams', 'bets.team')->orderBy('id', 'desc')->get();

@@ -29,7 +29,7 @@ class SportController extends Controller
   }
 
 
-  public function sportCategories($id)
+  public function sportCategories($id = null)
   {
     $sCategory = SportCategory::where('sport_id', $id)->get();
     return $sCategory;

@@ -13,8 +13,8 @@ class SportCategoryController extends Controller
 {
 
 
-  public function competitions($id)
-  {
+  public function competitions($id = null)
+  { 
     $competition = Competition::where('sport_category_id', $id)->get();
     return $competition;
   }
