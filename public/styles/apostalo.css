@@ -260,7 +260,9 @@ body {
   /* list-style: none; */
 }
 
-
+#searchSuggestion{
+  color: green;
+}
 
 
 

@@ -78,7 +78,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
 
-
+      // dd($request);
       $validatedData = Validator::make($request->all(), [
         'description' => 'required|max:255',
         'sport' => 'required|max:255',
@@ -99,7 +99,7 @@ class EventController extends Controller
 
         foreach ($request->teams as $team) {
           $eventTeam = new EventTeam();
-          $eventTeam ->team_id= $team;
+          $eventTeam->team_id= $team;
           $eventTeam->event_id =$event->id;
           $eventTeam->save();
         }

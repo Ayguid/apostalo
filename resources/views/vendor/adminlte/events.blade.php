@@ -39,12 +39,19 @@
             </select><br>
 
             <label for="">Seleccione Equipos</label><br>
-            <select id="teamsSelect1" class="select" name="teams[]">
 
-            </select>
-            {{-- <select id="teamsSelect2" class="select" name="teams[]">
+            {{-- <select id="teamsSelect" class="" name="">
 
-          </select> --}}
+            </select> --}}
+
+            <input type="search" id="searchInput" placeholder="Busqueda.."><br>
+            <div id="searchSuggestion" class="">
+
+            </div>
+            <button id="addTeamButton" type="button" name="button">Agregar Equipo</button><br>
+            <div id="teams" class="">
+
+            </div>
           <br>
 
           <label for="">Seleccione una Competencia</label><br>
@@ -124,10 +131,10 @@ function addElements(element, addTo, data){
     addTo.removeChild(addTo.firstChild);
   }
 
-  var default = document.createElement(element);
-  default.text = '-- ';
-  default.value = 0;
-  addTo.appendChild(default);
+  var init = document.createElement(element);
+  init.text = '-- ';
+  init.value = 0;
+  addTo.appendChild(init);
 
 
   for (var i = 0; i < data.length; i++) {
@@ -153,12 +160,10 @@ let sportSelect = document.getElementById('sportSelect');
 sportSelect.onchange = function(e){
   ajaxGet('sportCategories', sportSelect.value)
   .then(function(result) {
-    // Code depending on result
     addElements('option', 'categorySelect', result);
-    console.log(result);
+    // console.log(result);
   })
   .catch(function() {
-    // An error occurred
     console.log('error');
   });
 
@@ -166,83 +171,84 @@ sportSelect.onchange = function(e){
 
 
 // Hear Category Selector And create Competitions
+let teamsByCategory;
 let categorySelect = document.getElementById('categorySelect');
 categorySelect.onchange = function(e){
   ajaxGet('teamsByCategory', categorySelect.value)
   .then(function(result) {
-    // Code depending on result
-    addElements('option', 'teamsSelect1', result);
-    console.log(result);
+    // addElements('option', 'teamsSelect', result);
+    teamsByCategory = result;
+    // console.log(teams);
   })
   .catch(function() {
-    // An error occurred
     console.log('error');
   });
-  // makeOptions('competitions', categorySelect.value, 'competitionSelect');
-  // makeOptions('teams', categorySelect.value, 'teamsSelect1');
-  // makeOptions('teams', categorySelect.value, 'teamsSelect2');
+
+
+
+  ajaxGet('competitions', categorySelect.value)
+  .then(function(result) {
+    addElements('option', 'competitionSelect', result);
+    // teamsByCategory = result;
+    // console.log(teams);
+  })
+  .catch(function() {
+    console.log('error');
+  });
+
 }
 
 
 
 
-// function makeOptions(requestTo, value, select){
-//
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//
-//     if (this.readyState == 4 && this.status == 200) {
-//
-//       let response = JSON.parse(this.response);
-//
-//       select = document.getElementById(select);
-//
-//       while (select.firstChild) {
-//         select.removeChild(select.firstChild);
-//       }
-//       var optionDefault = document.createElement("option");
-//       optionDefault.text = '-- ';
-//       optionDefault.value = 0;
-//       select.appendChild(optionDefault);
-//       for (var i = 0; i < response.length; i++) {
-//
-//         var option = document.createElement("option");
-//         option.text = response[i].description;
-//         option.value = response[i].id;
-//         select.appendChild(option);
-//
-//       }
-//     }
-//     else if(this.status == 500){
-//       // console.log(this.response);
-//       window.location.reload(true);
-//       return false;
-//     }
-//   };
-//
-//   xhttp.open("GET", "/api/"+requestTo+"/"+value , true);
-//   xhttp.send();
-// }
-//
-//
-//
-//
-//
-// // Hear Sport Selector And create Categories
-// let sportSelect = document.getElementById('sportSelect');
-// sportSelect.onchange = function(e){
-//   makeOptions('sportCategories', sportSelect.value, 'categorySelect');
-// }
-//
-//
-// // Hear Category Selector And create Competitions
-// let categorySelect = document.getElementById('categorySelect');
-// categorySelect.onchange = function(e){
-//   makeOptions('competitions', categorySelect.value, 'competitionSelect');
-//   makeOptions('teams', categorySelect.value, 'teamsSelect1');
-//   makeOptions('teams', categorySelect.value, 'teamsSelect2');
-// }
-//
+
+
+
+
+let addTeamButton = document.getElementById("addTeamButton");
+let searchInput = document.getElementById("searchInput");
+let teams = document.getElementById('teams');
+var found;
+
+searchInput.oninput = function() {
+    found = teamsByCategory.filter(function(teamsByCategory) {
+    return teamsByCategory.description.toLowerCase().includes(searchInput.value.toLowerCase());
+  });
+  var suggest = [];
+  for (var i = 0; i < found.length; i++) {
+  suggest.push(found[i].description);
+  }
+  document.getElementById('searchSuggestion').innerHTML ='Sugerencia :' + suggest;
+  console.log(found);
+}
+
+
+
+
+addTeamButton.onclick= function() {
+
+for (var i = 0; i < found.length; i++) {
+  var x = document.createElement("INPUT");
+  var y = document.createElement("LABEL");
+  var z = document.createElement("br");
+  x.name = "teams[]";
+  y.innerHTML = found[i].description;
+  x.value = found[i].id;
+  x.setAttribute("type", "checkbox");
+  x.setAttribute("checked", true);
+  teams.appendChild(y);
+  teams.appendChild(x);
+  teams.appendChild(z);
+}
+  console.log(found);
+}
+
+
+
+
+
+
+
 
 
 
